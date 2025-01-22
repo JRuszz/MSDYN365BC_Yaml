@@ -4,16 +4,16 @@ steps:
 - powershell: |
     if (-not (Get-Module NVRAppDevOps -ListAvailable)) {
       Write-Host "Installing module NVRAppDevOps"
-      install-module -Name NVRAppDevOps -Scope CurrentUser -Force -SkipPublisherCheck
+      Install-Module -Name NVRAppDevOps -RequiredVersion 2.4.0	
     }
+
     Write-Host "Updating module NVRAppDevOps"
     update-module -Name NVRAppDevOps -Force
     if (-not (Find-Module navcontainerhelper)) {
       Write-Host "Module navcontainerhelper not found in repository"
     } else {
       if (-not (Get-Module navcontainerhelper -ListAvailable)) {
-        Write-Host "Installing module navcontainerhelper"
-        install-module -Name navcontainerhelper -Scope CurrentUser -Force -SkipPublisherCheck
+        Write-Host "Installing module navcontainerhelper"  
       }
       Write-Host "Updating module navcontainerhelper"
       update-module -Name navcontainerhelper -Force
