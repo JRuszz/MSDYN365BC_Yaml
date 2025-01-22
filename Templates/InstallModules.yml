@@ -11,7 +11,7 @@ steps:
     # Install or update NVRAppDevOps module
     if (-not (Get-Module -Name 'NVRAppDevOps' -ListAvailable)) {
       Write-Host "Installing module NVRAppDevOps"
-      Install-Module -Name 'NVRAppDevOps' -RequiredVersion 2.4.0 -Scope CurrentUser -Force -SkipPublisherCheck
+      Install-Module -Name 'NVRAppDevOps' -RequiredVersion 1.0.0 -Scope CurrentUser -Force -SkipPublisherCheck
     }
     Write-Host "Updating module NVRAppDevOps"
     Update-Module -Name 'NVRAppDevOps' -Force
